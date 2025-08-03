@@ -27,19 +27,6 @@ class MessageSent implements ShouldBroadcastNow {
         //* Broadcasts to a private channel specific to the receiver of the message
         return [
             new PrivateChannel("chat.{$this->message->receiver_id}"),
-
-            //! Broadcasts to a private channel specific to the sender of the message
-            // new PrivateChannel("chat.{$this->message->sender_id}"),
         ];
     }
-
-    /**
-     *! Define a custom broadcast event name.
-     *
-     * @return string The custom event name for the broadcast.
-     */
-    // public function broadcastAs(): string {
-    //     //* Sets the event name as 'message.sent' for frontend listeners
-    //     return 'message.sent';
-    // }
 }
